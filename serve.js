@@ -2,9 +2,11 @@
 var express = require('express');
 var rest = require('rest-sugar');
 var sugar = require('object-sugar');
+var taskist = require('taskist');
 
 var config = require('./config');
 var models = require('./models');
+var tasks = require('./tasks');
 
 
 main();
@@ -32,6 +34,8 @@ function main() {
     api.pre(function() {
         api.use(rest.only('GET'));
     });
+
+    taskist(config.tasks, tasks, {instant: true});
 
     process.on('exit', terminator);
 
