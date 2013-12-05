@@ -7,6 +7,7 @@ module.exports = schemas;
 
 
 schema(schemas, 'Geek').fields({
+    ghid: Number,
     nick: String,
     name: String,
     gravatar_id: String,
