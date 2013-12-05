@@ -14,5 +14,7 @@ schema(schemas, 'Geek').fields({
     following: Number,
     repos: Number,
     language: String,
-    blog: String
+    blog: String,
+    bio: String,
+    company: String
 });
