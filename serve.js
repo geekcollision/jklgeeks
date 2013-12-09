@@ -5,7 +5,7 @@ var sugar = require('object-sugar');
 var taskist = require('taskist');
 
 var config = require('./config');
-var models = require('./models');
+var schemas = require('./schemas');
 var tasks = require('./tasks');
 
 
@@ -28,7 +28,7 @@ function main() {
     });
 
     var api = rest(app, '/api/v1', {
-        geeks: models.Geek
+        geeks: schemas.Geek
     }, sugar);
 
     api.pre(function() {

@@ -3,7 +3,7 @@ var sugar = require('object-sugar');
 
 var token = require('../config').github;
 var github = require('../lib/github')(token);
-var Geek = require('../models').Geek;
+var Geek = require('../schemas').Geek;
 
 
 module.exports = function() {
