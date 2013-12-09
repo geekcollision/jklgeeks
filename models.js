@@ -1,12 +1,8 @@
 var sugar = require('object-sugar');
 var schema = sugar.schema();
 
-var schemas = {};
 
-module.exports = schemas;
-
-
-schema(schemas, 'Geek').fields({
+schema(exports, 'Geek').fields({
     ghid: Number,
     nick: String,
     name: String,
