@@ -11,7 +11,18 @@ var tasks = require('./tasks');
 
 main();
 
+
 function main() {
+    taskist(config.tasks, tasks, {
+        instant: function(err) {
+            if(err) return console.error(err);
+
+            serve();
+        }
+    });
+}
+
+function serve() {
     var app = express();
     var port = config.port;
 
@@ -34,9 +45,6 @@ function main() {
     api.pre(function() {
         api.use(rest.only('GET'));
     });
-
-    taskist(config.tasks, tasks, {instant: true});
-
     process.on('exit', terminator);
 
     ['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT', 'SIGBUS',

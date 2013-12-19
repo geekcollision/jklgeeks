@@ -6,7 +6,7 @@ var github = require('../lib/github')(token);
 var Geek = require('../schemas').Geek;
 
 
-module.exports = function() {
+module.exports = function(cb) {
     github.users('location:Jyväskylä', function(err, d) {
         if(err) return console.error(err);
 
@@ -34,7 +34,10 @@ module.exports = function() {
                 });
             });
         }, function(err) {
-            if(err) return console.error(err);
+            if(err) return cb(err);
+
+            cb();
         });
     });
 };
+
