@@ -13,5 +13,6 @@ schema(exports, 'Geek').fields({
     language: String,
     blog: String,
     bio: String,
-    company: String
+    company: String,
+    type:String
 });
