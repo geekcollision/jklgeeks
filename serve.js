@@ -50,7 +50,8 @@ function serve() {
     });
 
     var api = rest(app, '/api/v1', {
-        geeks: schemas.Geek
+        geeks: schemas.Geek,
+        organizations: schemas.Organization
     }, sugar);
 
     api.pre(function() {
